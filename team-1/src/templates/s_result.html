@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}搜索结果{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/login_regist.css') }}">
+{% endblock %}
+
+{% block main %}
+<h1>
+{% if results != None %}
+    {% for i in results %}
+        <p>{{ i.get('law_name')+' '+i.get('clause') }}</p>
+        <p>{{ i.get('content') }}</p>
+        <br>
+    {% endfor %}
+{% else %}
+    <p>None</p>
+{% endif %}
+</h1>
+{% endblock %}

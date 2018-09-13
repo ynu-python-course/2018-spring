@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>搜索界面-易律</title>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style2.css') }}">
+</head>
+<body>
+<div id="top-image">
+  <div id="content" class="container center-block">
+     <div class="jumbotron">
+        <form action="" method="post">
+        <div class="container">
+        <h1>易律</h1>
+        <p>请输入您想要查询的法律条例</p>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="输入搜寻内容" name="search">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-block">立即搜索</button>
+            </div>
+        </div>
+        </form>
+     </div>
+  </div>
+</div>
+</div>
+
+<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/ios-parallax.js') }}"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#top-image').iosParallax({
+	movementFactor: 50
+  });
+});
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>Python第一小组。</p>
+</div>
+</body>
+</html>

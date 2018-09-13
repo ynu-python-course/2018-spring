@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="FlatBest - Responsive One Page Fast Loading">
+<meta name="keywords" content="One Page, Bootstrap, Website, Business, Resume, Portfolio, Template, Unlimited Colors">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Raleway:500,600,700">
+<link rel="icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='assets/font-awesome/css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/nivo-lightbox.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/themes/default/default.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/colors/color.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/preloader.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/responsive.css') }}">
+
+<title>首页-易律</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/base.css') }}">
+</head>
+
+<body>
+    <div class="preloaders">
+      <div class="preloaders-gif">&nbsp;</div>
+    </div>
+    <!--登陆框 -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="#">易律</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+              {% if user %}
+                <li><a href="#">{{ user.username }}</a></li>
+                <li><a href="{{ url_for('logout') }}">注销</a></li>
+              {% else %}
+                <li><a href="{{ url_for('login') }}">登录</a></li>
+                <li><a href="{{ url_for('regist') }}">注册</a></li>
+              {% endif %}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- ===== 头部 ===== -->
+    <header id="home">
+
+    <div class="background-overlay">
+
+        <div class="container-header">
+
+            <!-- ===== 导航 ===== -->
+            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation bgc-two">
+                <div class="container">
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#onepage-navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand">易律</a>
+
+                    </div>
+
+                    <!-- ===== 导航菜单 ===== -->
+                    <div class="navbar-collapse collapse" id="onepage-navigation">
+                        <ul class="nav navbar-nav navbar-right main-navigation">
+                            <li><a href="#home">主页</a></li>
+                            <li><a href="#section-kjj">简介</a></li>
+                            <li><a href="#section-Airphoto">关于</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===== 欢迎界面 ===== -->
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-10 col-md-offset-1 distance-header">
+
+                    <h1>
+                        <strong>易律</strong>
+                    </h1>
+                    <div class="underline"></div>
+                    <h1>
+                        法律信息检索工具
+                    </h1>
+
+
+
+                    <div id="call_to_action-5" class="distance-button">
+
+                    <a href="{{ url_for('search') }}" target="_blank" class="btn standard-button">LET'S GO!</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    </header>
+
+
+    <!-- ===== 作品介绍 ===== -->
+    <section class="section-about bgc-one" id="section-kjj">
+    <div class="container">
+
+        <h2>作品简介</h2>
+        <div class="underline">
+        </div>
+
+        <p>
+            易律是我们制作的一款提供搜索法律信息功能的检索工具，大家可以通过我们的软件去搜索自己想要了解的法律相关知识，并且每个法律条文都会为您提供相应的法律案例，以助你更深入地理解。针对于学生以及对法律知识不熟悉的人群，需要学习和查询相关法律信息知识案例时使用。
+        </p>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="side-images pull-left">
+                    <img src="{{ url_for('static',filename='images/law.jpg') }}" alt="Law" class="img-responsive">
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <div class="about text-left">
+
+                    <!-- ===== Features List ===== -->
+                    <ul class="feature-list">
+
+                        <li>
+                        <div class="icon-custom pull-left">
+                            <i class="fa fa-laptop"></i>
+                        </div>
+                        <div class="details pull-left">
+                            <h6>Tips</h6>
+                            <p>
+                                (1)易律的内容会不定期进行更新，确保用户获得正确和最新的法律信息。<br>
+                                (2)易律还提供论坛和留言功能，想要参与讨论功能用户需要先进行登陆操作。
+
+                            </p>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </section>
+
+    <!-- ===== 关于 ===== -->
+    <section id="section-Airphoto" class="section-video bgc-two">
+
+    <footer class="container">
+
+        <h2>关于</h2>
+            <div class="copyright">
+                    <a>2018Python春季学期第一小组</a>
+                    <p>组长：<br>
+                    金超轶<br>
+                    组员：<br>
+                    罗宇彬、陈甸甸、钱伯初、蒲星宇、毛子健<br>
+                    </p>
+            </div>
+    </footer>
+
+    <!-- ===== Script Javascript ===== -->
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/preloader.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/retina.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/SmoothScroll.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.scrollTo.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.localScroll.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/nivo-lightbox.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/simple-expand.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.nav.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.fitvids.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/custom.js') }}"></script>
+
+</body>
+</html>
